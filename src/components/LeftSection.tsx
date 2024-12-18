@@ -34,7 +34,7 @@ const LeftSection = () => {
             <div className={styles.newChat}>
                 <div>
                     <Image src={chatgptlogo} alt="ChatGPT" width={50} height={50} />
-                    <p className={styles.text1}>CHATGPT BOT</p>
+                    <p className={styles.text1}>FeelWell</p>
 
                 </div>
 
@@ -54,7 +54,7 @@ const LeftSection = () => {
             <div className={styles.newChat}>
                 <div>
                     <Image src={nouserlogo} alt="ChatGPT" width={50} height={50} />
-                    <p className={styles.text1}>virajj014@gmail.com</p>
+                    <p className={styles.text1}>User</p>
                 </div>
 
             </div>
