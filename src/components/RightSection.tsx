@@ -6,7 +6,7 @@ import chatgptlogo2 from '@/assets/chatgptlogo2.png'
 import nouserlogo from '@/assets/nouserlogo.png'
 import Image from 'next/image'
 // import schoolbg from '@/assets/schoolBG.jpg'
-// import { HashLoader } from 'react-spinners';
+import { HashLoader } from 'react-spinners';
 const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API
 // console.log(API_KEY)
 const RightSection = () => {
@@ -219,7 +219,7 @@ const RightSection = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
                                 </svg>
                                 :
-                                // <HashLoader color="#36d7b7" size={30} />
+                                <HashLoader color="#36d7b7" size={30} />
                         }
 
                     </div>
