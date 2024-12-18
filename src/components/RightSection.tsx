@@ -113,7 +113,7 @@ const RightSection = () => {
                             <HashLoader color="#36d7b7" size={30} />
                         )}
                     </div>
-                    <p>CHATGPT BOT can make mistakes. Consider checking important information.</p>
+                    <p>FeelWell BOT can make you sad too. So ask Question carefully😂</p>
                 </div>
             </div>
         </div>
