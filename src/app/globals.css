@@ -1,10 +1,182 @@
+/* Define root variables for easy color management */
 :root {
-  --col1: rgb(13, 13, 13);
-  --col2: #181414;
-  --textcol: rgb(255, 255, 255);
+  --col1: rgb(127, 153, 163);   /* Dark background color */
+  --col2: rgb(127, 153, 163);   
+  --col3: rgb(0, 0, 0);          /* Slightly darker background color */
+  --textcol: rgb(0, 0, 0);  /* White text color */
 }
 
+/* Reset default margins and paddings */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Ensure that padding and borders are included in element's total width/height */
+}
+
+/* Global styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--col1);  /* Use --col1 for the background */
+  color: var(--textcol);           /* Set text color to white */
+  height: 100vh;                   /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Global anchor styles */
+a {
+  text-decoration: none;
+  color: inherit; /* Inherit text color from parent */
+}
+
+/* Universal container for the whole layout */
+.mainpage {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--col1); /* Use --col1 for the background */
+}
+
+/* Left and right sections layout */
+.leftOut {
+  background-color: var(--col2); /* Use --col2 for left section background */
+  width: 20%;
+  overflow: hidden;
+}
+
+.rightOut {
+  width: 80%;
+  background-color: var(--col1); /* Background of right section */
+  overflow: hidden;
+}
+
+/* Headings and text for the whole page */
+h1, h2, p {
+  color: var(--textcol);  /* Ensure all text is white */
+}
+
+/* Styling for sections with a gap */
+.leftSection, .rightSection {
+  background-color: var(--col1); /* Consistent background for sections */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Specific text or button styles */
+.text1 {
+  color: var(--textcol);  /* Use text color for text1 */
+  font-size: 20px;
+}
+
+/* Navigation, header, or other components */
+.newChat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 10%;
+}
+
+.newChat div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.newChat div img {
+  border-radius: 50%;
+}
+
+.newChat svg {
+  width: 30px;
+  height: 30px;
+  color: var(--textcol); /* Ensure icons are white */
+}
+
+/* Chat and messages container */
+.allChats {
+  height: 70%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.message img {
+  border-radius: 50%;
+}
+
+.message .details {
+  color: var(--textcol);  /* Set message text color to white */
+}
+
+.message svg {
+  width: 30px;
+  height: 30px;
+  color: var(--textcol); /* Ensure icons are white */
+}
+
+.nochat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--textcol); /* Text color */
+}
+
+.suggestioncard {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.suggestioncard h2,
+.suggestioncard p {
+  color: var(--textcol); /* Ensure text is white */
+}
+
+/* Bottom message section */
+.bottomsection {
+  background-color: var(--col2); /* Dark background for the bottom section */
+  padding: 20px;
+}
+
+.messagebar input {
+  background-color: var(--col3); /* Same as the bottom section */
+  color: var(--textcol);         /* White text color */
+  border: 1px solid var(--textcol);
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.messagebar svg {
+  color: var(--textcol); /* White icon for send button */
+}
+
+.messagebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+p {
+  color: var(--textcol); /* Ensure all paragraph text is white */
 }
