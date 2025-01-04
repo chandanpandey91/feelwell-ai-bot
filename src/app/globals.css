@@ -1,7 +1,7 @@
 /* Define root variables for easy color management */
 :root {
-  --col1: rgb(127, 153, 163);   /* Dark background color */
-  --col2: rgb(127, 153, 163);   
+  --col1: rgb(255, 255, 255);   /* Dark background color */
+  --col2: rgb(255, 255, 255);   
   --col3: rgb(0, 0, 0);          /* Slightly darker background color */
   --textcol: rgb(0, 0, 0);  /* White text color */
 }
