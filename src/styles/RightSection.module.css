@@ -1,50 +1,68 @@
 .rightSection {
     background-color: var(--col2);
     height: 100vh;
-    padding: 0px 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     position: relative;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
-.schoolbg{
+
+.schoolbg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.1;
+    opacity: 0.08;
     z-index: 1;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
 }
 
-.rightin{
+.rightin {
     z-index: 10;
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 .chatgptversion {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     height: 10%;
     color: var(--textcol);
-    font-size: 25px;
-    gap: 10px;
+    font-size: 24px;
+    gap: 15px;
+    font-weight: 600;
     z-index: 2;
-
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .chatgptversion svg {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     z-index: 2;
-
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.chatgptversion svg:hover {
+    transform: rotate(20deg);
+    color: var(--highlight);
+}
 
 .nochat {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     color: var(--textcol);
     font-size: 25px;
@@ -54,137 +72,171 @@
 
 .nochat .s1 {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    text-align: center;
 }
 
 .nochat .s1 h1 {
-    font-size: 30px;
-    font-weight: 400;
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
 .nochat .s2 {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
+    width: 90%;
     gap: 20px;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .nochat .suggestioncard {
     display: flex;
     flex-direction: column;
-    border: 1px solid gray;
-    padding: 10px;
-    width: 400px;
-    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    width: 300px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
+.nochat .suggestioncard:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
 }
 
 .nochat .suggestioncard h2 {
-    font-size: 20px;
-    font-weight: 400;
-
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--textcol);
 }
 
 .nochat .suggestioncard p {
     font-size: 16px;
-    font-weight: 400;
     color: gray;
+    line-height: 1.4;
 }
 
 .bottomsection {
     height: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     z-index: 10;
-
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 
 .bottomsection svg {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     background-color: gray;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 
 .bottomsection svg:hover {
     cursor: pointer;
-    background-color: white;
+    background-color: var(--highlight);
+    transform: scale(1.1);
 }
 
 .bottomsection .messagebar {
-    border: 1px solid gray;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     align-items: center;
     display: flex;
     padding: 15px;
     border-radius: 10px;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .bottomsection .messagebar input {
     background-color: transparent;
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 18px;
     color: var(--textcol);
     width: 100%;
+    padding: 5px;
 }
 
-.messages{
+.messages {
     height: 70%;
     width: 100%;
-    padding-left: 10%;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    overflow: auto;
+    gap: 20px;
+    overflow-y: auto;
 }
 
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
 
-.messages .message{
+.messages::-webkit-scrollbar-thumb {
+    background-color: var(--highlight);
+    border-radius: 5px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.messages .message {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    align-items: flex-start;
 }
 
-.messages .message img{
-    width: 35px;
-    height: 35px;
+.messages .message img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .messages .message div {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-.messages .message div h2{
-    color: var(--textcol);
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 5px;
+    gap: 5px;
 }
 
-
-.messages .message div p{
+.messages .message div h2 {
     color: var(--textcol);
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.messages .message div p {
+    color: var(--textcol);
+    font-size: 16px;
+    line-height: 1.5;
     max-width: 1000px;
+    word-wrap: break-word;
 }
 
-
-.bottomsection p{
+.bottomsection p {
     color: goldenrod;
+    font-size: 14px;
+    text-align: center;
 }
